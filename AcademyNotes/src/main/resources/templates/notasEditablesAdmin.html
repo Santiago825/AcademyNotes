@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" xml:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/notasEstudiantes.css" />
+
+    <title>Notas Academicast</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-light shadow-lg">
+        <div class="container d-flex justify-content-between">
+          <a class="navbar-brand" href="#">
+            <img
+              src="/img/books.png"
+              alt=""
+              width="30"
+              height="24"
+              class="d-inline-block align-text-top"
+            />
+          </a>
+          <h1 class="navbar-brand">NOTAS ACADEMICAS</h1>
+          <form th:action="@{/logout}" method="post">
+            <button class="navbar-brand">
+                <i class="fa-solid fa-power-off"></i>
+            </<button>
+        </form>
+          
+        </div>
+      </nav>
+    </header>
+    <main>
+        <form th:action="@{/guardar/}+${boletin.idboletin}" th:object="${boletin}" method="post">
+            <div class="container-fluid my-lg-3 my-4 px-lg-4 d-flex flex-wrap">
+                <!-- Contenedor izquierda de notas  -->
+                <div
+                  class="container col-lg-6 d-flex flex-wrap justify-content-center px-lg-5"
+                >
+                  <!-- Titulo del contenedor -->
+                  <div
+                    class="row col-lg-10 col-12 bg-light text-center p-lg-2 mb-4 rounded-3 my-lg-4 border border-primary"
+                  >
+                    <h2 th:text="'NOTAS DE LA MATERIA ' +${materia}+ ' DEL ESTUDIANTE '+${nombre}" class="fs-4">
+                      Notas materia español del estudiante pepito del curso X
+                    </h2>
+                  </div>
+                  <!-- Contenedor de notas por periodo -->
+                  <div class="row col-lg-10 col-12">
+                    <!-- nota 1 -->
+                    <div class="container col-lg-12">
+                      <div
+                        class="container col-lg-12 d-flex justify-content-between mb-4"
+                      >
+                        <div
+                          class="row col-lg-7 col-8 p-lg-1 d-flex justify-content-center align-content-center rounded-2 text-center border border-primary bg-light"
+                        >
+                          <span class="fs-5 fw-bold">1° Periodo </span>
+                        </div>
+                        <div
+                          class="row col-lg-5 col-4 p-lg-1 rounded-2 text-center border border-primary bg-light"
+                        >
+                          <input th:field="${boletin.primerperiodo}" step="any" type="number" class="fs-4 fw-bold"  min="1" max="5" required="true"></input>
+                        </div>
+                      </div>
+                      <div
+                        class="container col-lg-12 d-flex justify-content-between mb-4"
+                      >
+                        <div
+                          class="row col-lg-7 col-8 p-lg-1 rounded-2 text-center border border-primary bg-light"
+                        >
+                          <span class="fs-4 fw-bold">2° Periodo </span>
+                        </div>
+                        <div
+                          class="row col-lg-5 p-lg-1 col-4 rounded-2 text-center border border-primary bg-light"
+                        >
+                          <input th:field="${boletin.segundoperiodo}" step="any" type="number" class="fs-4 fw-bold"  min="1" max="5" required="true"></input>
+                        </div>
+                      </div>
+                      <div
+                        class="container col-lg-12 d-flex justify-content-between mb-4"
+                      >
+                        <div
+                          class="row col-lg-7 col-8 p-lg-1 rounded-2 text-center border border-primary bg-light"
+                        >
+                          <span class="fs-4 fw-bold">3° Periodo </span>
+                        </div>
+                        <div
+                          class="row col-lg-5 p-lg-1 col-4 rounded-2 text-center border border-primary bg-light"
+                        >
+                          <input th:field="${boletin.tercerperiodo}" step="any" type="number" class="fs-4 fw-bold"  min="1" max="5" required="true"></input>
+                        </div>
+                      </div>
+                      <div
+                        class="container col-lg-12 d-flex justify-content-between mb-4"
+                      >
+                        <div
+                          class="row col-lg-7 col-8 p-lg-1 rounded-2 text-center border border-primary bg-light"
+                        >
+                          <span class="fs-4 fw-bold">4° Periodo </span>
+                        </div>
+                        <div
+                          class="row col-lg-5 col-4 p-lg-1 rounded-2 text-center border border-primary bg-light"
+                        >
+                            <input th:field="${boletin.cuartoperiodo}" step="any" type="number" class="fs-4 fw-bold"  min="1.0" max="5.0" required="true"></input>
+                        </div>
+                      </div>
+                      <div
+                        class="container col-lg-12 d-flex justify-content-between mb-4"
+                      >
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="container col-lg-6">
+                  <div
+                    class="row col-lg-12 bg-light text-center p-lg-2 rounded-3 my-lg-4 my-4 border border-primary mb-lg-5"
+                  >
+                    <h2 class="fs-4">Observaciones</h2>
+                  </div>
+                  <div class="container col-lg-12 ">
+                    <div
+                      class="container col-lg-12 d-flex justify-content-between mb-4"
+                    >
+                      <div
+                        class="row col-lg-12 col-12 p-lg-1 rounded-2 border border-primary bg-light"
+                      >
+                        <textarea th:field="${boletin.observacion}">
+                        </textarea>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="container col-lg-12 d-flex justify-content-center mt-lg-3 mt-3">
+                  <button
+                    
+                    class="btn btn-success col-lg-4 col-6 px-lg-5 py-lg-3 "
+                  >
+                    Registrar cambios
+                  </button>
+                </div>
+                <div class="container col-lg-12 d-flex justify-content-center mt-lg-3 mt-3">
+                  <a
+                    th:href="@{/materiasAdmin/}+${idUsuario}"  
+                    class="btn btn-danger col-lg-4 col-5 px-lg-5 py-lg-3"
+                  >
+                    Volver
+                  </a>
+                </div>
+              </div>
+        </form>
+      <!-- contenedor genral  -->
+      
+    </main>
+      
+  </body>
+</html>

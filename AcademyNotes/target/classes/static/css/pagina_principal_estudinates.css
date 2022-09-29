@@ -1,0 +1,30 @@
+@font-face {
+    font-family: Oswald;
+    src: url("../fonts/Oswald-VariableFont_wght.ttf");
+    font-weight: bold;
+  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: url("../img/f2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.descripcion_estudinte{
+    font-family: Oswald;
+}
+.border_contenedores{
+    border:  2px solid rgb(48, 131, 255);
+}
+
+@media screen and (max-width:680px) {
+    body{
+        background: url("../img/fondo_phone.jpg"); 
+        background-size: cover;
+        background-repeat: no-repeat;
+       }
+}

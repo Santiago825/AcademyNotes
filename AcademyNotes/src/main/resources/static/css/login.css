@@ -1,0 +1,41 @@
+@font-face {
+    font-family: DynaPuff;
+    src: url("../fonts/DynaPuff-VariableFont_wdth\,wght.ttf");
+    font-weight: bold;
+  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    background: url("../img/f2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+}
+.title_login{
+    color: #2c5342;
+    font-weight: bold;
+    font-family: DynaPuff;
+}
+.btn-ingresar{
+    background-color: #afb98e;
+    color: white;
+    transition: 0.2s;
+}
+.btn-ingresar:hover{
+    background-color: white;
+    color: #3d461a;
+}
+@media screen and (max-width:680px) {
+    body{
+        background: url("../img/fondo_phone.jpg"); 
+        background-size: cover;
+        background-repeat: no-repeat;
+       }
+}

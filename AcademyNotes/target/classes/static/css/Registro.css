@@ -1,0 +1,37 @@
+
+@font-face {
+    font-family: DynaPuff;
+    src: url("../fonts/DynaPuff-VariableFont_wdth\,wght.ttf");
+    font-weight: bold;
+  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2{
+    color: #2c5342;
+    font-weight: bold;
+    font-family: DynaPuff;
+}
+.waring_alert{
+    display: none;
+}
+
+body{
+    background: url("../img/f2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+label{
+    font-weight: 500;
+    color: rgb(14, 58, 6);
+}
+@media screen and (max-width:680px) {
+    body{
+        background: url("../img/fondo_phone.jpg"); 
+        background-size: cover;
+        background-repeat: no-repeat;
+       }
+}
